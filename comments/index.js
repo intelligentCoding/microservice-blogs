@@ -1,11 +1,13 @@
 const express = require("express");
 const { randomBytes } = require("crypto");
+const cors = require('cors');
 
 const app = express();
 
+
 // parse requests of content-type: application/json
 app.use(express.json());
-
+app.use(cors());
 //store all the resources in memory
 const commentsByPostId = {};
 
